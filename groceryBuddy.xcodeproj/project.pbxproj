@@ -12,6 +12,7 @@
 		C40117CB1DF77E9D00A2BE99 /* SQLiteDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40117CA1DF77E9D00A2BE99 /* SQLiteDataBase.swift */; };
 		C40117D41DF88D3800A2BE99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40117D31DF88D3800A2BE99 /* User.swift */; };
 		C41357D01DF1026000D791DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41357CF1DF1026000D791DC /* RegisterViewController.swift */; };
+		C438AB631E0873E4007CC107 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB621E0873E4007CC107 /* CalculatorViewController.swift */; };
 		C4893EA31DF0BCDB004FB07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */; };
 		C4893EA51DF0BCDB004FB07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA41DF0BCDB004FB07F /* ViewController.swift */; };
 		C4893EA81DF0BCDB004FB07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4893EA61DF0BCDB004FB07F /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 		C401181E1DF8A99C00A2BE99 /* libtclsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libtclsqlite3.dylib; sourceTree = "<group>"; };
 		C401181F1DF8A99C00A2BE99 /* pkgIndex.tcl */ = {isa = PBXFileReference; lastKnownFileType = text; path = pkgIndex.tcl; sourceTree = "<group>"; };
 		C41357CF1DF1026000D791DC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C438AB611E08700C007CC107 /* groceryBuddy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "groceryBuddy-Bridging-Header.h"; sourceTree = "<group>"; };
+		C438AB621E0873E4007CC107 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		C4893E9F1DF0BCDB004FB07F /* groceryBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groceryBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4893EA41DF0BCDB004FB07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		C4893EA11DF0BCDB004FB07F /* groceryBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				C438AB611E08700C007CC107 /* groceryBuddy-Bridging-Header.h */,
 				C40117D21DF88CE300A2BE99 /* Supporting Files */,
 				C40117D11DF88C9D00A2BE99 /* Model */,
 				C4893EA41DF0BCDB004FB07F /* ViewController.swift */,
@@ -129,6 +133,7 @@
 				C41357CF1DF1026000D791DC /* RegisterViewController.swift */,
 				C4E324171DF214FA00E6FEC4 /* LoginViewController.swift */,
 				C40117CA1DF77E9D00A2BE99 /* SQLiteDataBase.swift */,
+				C438AB621E0873E4007CC107 /* CalculatorViewController.swift */,
 			);
 			path = groceryBuddy;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				TargetAttributes = {
 					C4893E9E1DF0BCDB004FB07F = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -260,6 +266,7 @@
 				C40117D41DF88D3800A2BE99 /* User.swift in Sources */,
 				C4893EA51DF0BCDB004FB07F /* ViewController.swift in Sources */,
 				C4893EA31DF0BCDB004FB07F /* AppDelegate.swift in Sources */,
+				C438AB631E0873E4007CC107 /* CalculatorViewController.swift in Sources */,
 				C40117CB1DF77E9D00A2BE99 /* SQLiteDataBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +390,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubythree.groceryBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "groceryBuddy-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -402,7 +411,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubythree.groceryBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "groceryBuddy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				"TEST_HOST[sdk=*]" = "";
 			};
 			name = Release;

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AD828723E6EEA9A8BBD38B5AF6AD278C535494FB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "011CE3AA4B19186CB73FC6355C450ED08E313CA2" : 9223372036854775807,
+    "AD828723E6EEA9A8BBD38B5AF6AD278C535494FB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D9A155DF-9DAB-44D0-B977-0598891EDDF7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "011CE3AA4B19186CB73FC6355C450ED08E313CA2" : "..",
+    "AD828723E6EEA9A8BBD38B5AF6AD278C535494FB" : "grocerybuddy\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "groceryBuddy",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "groceryBuddy.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:Marc_Guerrero\/marvel-calculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "011CE3AA4B19186CB73FC6355C450ED08E313CA2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:Marc_Guerrero\/grocerybuddy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AD828723E6EEA9A8BBD38B5AF6AD278C535494FB"
+    }
+  ]
+}

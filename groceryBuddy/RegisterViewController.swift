@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
     }
     
 
-    @IBAction func registerTapButton(sender: AnyObject) {
+    @IBAction func registerTapButton(_ sender: AnyObject) {
         let userEmail = userEmailTextField.text
         let userPassword = userPasswordTextField.text
         let repeatPassword = repeatPasswordTextField.text
@@ -47,29 +47,29 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
-        NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(userEmail, forKey: "userEmail")
+        UserDefaults.standard.set(userPassword, forKey: "userPassword")
+        UserDefaults.standard.synchronize()
         
-        var myAlert = UIAlertController(title: "Alert", message: "Registration is successful. Thank you!", preferredStyle: UIAlertControllerStyle.Alert)
+        let myAlert = UIAlertController(title: "Alert", message: "Registration is successful. Thank you!", preferredStyle: UIAlertControllerStyle.alert)
             print("this should display too...")
 
         
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) {
-            action in self.dismissViewControllerAnimated(true, completion: nil)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+            action in self.dismiss(animated: true, completion: nil)
         }
         myAlert.addAction(okAction)
-        self.presentViewController(myAlert, animated: true, completion: nil)
+        self.present(myAlert, animated: true, completion: nil)
     }
     
-    func displayMyAlertMessage(userMessage:String){
-        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert)
+    func displayMyAlertMessage(_ userMessage:String){
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
      
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
         myAlert.addAction(okAction)
         
-        self.presentViewController(myAlert, animated: true, completion: nil)
+        self.present(myAlert, animated: true, completion: nil)
     }
     
     /*

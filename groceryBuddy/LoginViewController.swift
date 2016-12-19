@@ -25,18 +25,18 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func loginButtonTapped(sender: AnyObject) {
+    @IBAction func loginButtonTapped(_ sender: AnyObject) {
         let userEmail = userEmailTextField.text
         let userPassword = userPasswordTextField.text
         
-        let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")
-        let userPasswordStored = NSUserDefaults.standardUserDefaults().stringForKey("userPassword")
+        let userEmailStored = UserDefaults.standard.string(forKey: "userEmail")
+        let userPasswordStored = UserDefaults.standard.string(forKey: "userPassword")
         
         if(userEmailStored == userEmail){
             if(userPasswordStored == userPassword){
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+                self.dismiss(animated: true, completion: nil)
             }
             else {
                 print("Username not registered.")
@@ -45,15 +45,15 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func displayErrorMessage(errorMsge:String) {
+    func displayErrorMessage(_ errorMsge:String) {
         
-        var myAlert = UIAlertController(title: "Alert", message: "Username is not registered.", preferredStyle: UIAlertControllerStyle.Alert)
+        let myAlert = UIAlertController(title: "Alert", message: "Username is not registered.", preferredStyle: UIAlertControllerStyle.alert)
     
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
     
         myAlert.addAction(okAction)
     
-        self.presentViewController(myAlert, animated: true, completion: nil)
+        self.present(myAlert, animated: true, completion: nil)
     }
 
     /*

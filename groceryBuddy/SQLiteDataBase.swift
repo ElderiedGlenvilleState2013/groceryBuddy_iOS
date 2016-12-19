@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import SQLite
 
-enum DataAccessError: ErrorType {
-    case Datastore_Connection_Error
-    case Insert_Error
-    case Delete_Error
-    case Search_Error
-    case Nil_In_Data
+enum DataAccessError: Error {
+    case datastore_Connection_Error
+    case insert_Error
+    case delete_Error
+    case search_Error
+    case nil_In_Data
 }
 
 class SQLiteDataBase {

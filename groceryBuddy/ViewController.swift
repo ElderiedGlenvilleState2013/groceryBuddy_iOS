@@ -22,18 +22,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+    override func viewDidAppear(_ animated: Bool) {
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         
         if (!isUserLoggedIn){
-            self.performSegueWithIdentifier("loginView", sender: self)
+            self.performSegue(withIdentifier: "loginView", sender: self)
         }
     }
 
-    @IBAction func userLogout(sender: AnyObject) {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        self.performSegueWithIdentifier("loginView", sender: self)
+    @IBAction func userLogout(_ sender: AnyObject) {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.synchronize()
+        self.performSegue(withIdentifier: "loginView", sender: self)
 //        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
