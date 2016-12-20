@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CalculatorViewController: UIViewController {
 
@@ -24,7 +25,7 @@ class CalculatorViewController: UIViewController {
     var currentOperation: Operation = Operation.Empty
     var leftNum = ""
     var rightNum = ""
-    
+    var result = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,26 +43,62 @@ class CalculatorViewController: UIViewController {
         outputLbl.text = runningNum
     }
     
-    @IBAction func divideBtnPressed(_ sender: UIButton) {
+    @IBAction func divideBtnPressed(sender: AnyObject) {
+        processOperation(op: Operation.Divide)
     }
 
     
-    @IBAction func multiplyBtnPressed(_ sender: UIButton) {
+    @IBAction func multiplyBtnPressed(sender: AnyObject) {
+        processOperation(op: Operation.Multiply)
     }
     
-    @IBAction func addBtnPressed(_ sender: UIButton) {
+    @IBAction func addBtnPressed(sender: AnyObject) {
+        processOperation(op: Operation.Add)
     }
     
     
-    @IBAction func subtractBtnPressed(_ sender: UIButton) {
+    @IBAction func subtractBtnPressed(sender: AnyObject) {
+        processOperation(op: Operation.Subtract)
     }
     
-    @IBAction func equalBtnPressed(_ sender: UIButton) {
+    @IBAction func equalBtnPressed(sender: AnyObject) {
+        processOperation(op: currentOperation)
     }
     
-      @IBAction func clearButtonPressed(_ sender: UIButton) {
+      @IBAction func clearButtonPressed(sender: AnyObject) {
         outputLbl.text = "0"
         runningNum = ""
+        leftNum = ""
+        rightNum = ""
+        result = ""
+        currentOperation = Operation.Empty
     }
-
+    
+    func processOperation(op: Operation){
+        if currentOperation != Operation.Empty {
+            if runningNum != "" {
+                rightNum = runningNum
+                runningNum = ""
+            
+                if currentOperation == Operation.Multiply {
+                    result = "\(Double(leftNum)! * Double(rightNum)!)"
+                } else if currentOperation == Operation.Divide {
+                    result = "\(Double(leftNum)! / Double(rightNum)!)"
+                } else if currentOperation == Operation.Subtract {
+                    result = "\(Double(leftNum)! - Double(rightNum)!)"
+                } else if currentOperation == Operation.Add {
+                    result = "\(Double(leftNum)! + Double(rightNum)!)"
+                }
+                leftNum = result
+                outputLbl.text = result
+            }
+                currentOperation = op
+            
+        } else {
+            leftNum = runningNum
+            runningNum = ""
+            currentOperation = op
+    
+        }
+    }
 }

@@ -13,6 +13,9 @@
 		C40117D41DF88D3800A2BE99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40117D31DF88D3800A2BE99 /* User.swift */; };
 		C41357D01DF1026000D791DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41357CF1DF1026000D791DC /* RegisterViewController.swift */; };
 		C438AB631E0873E4007CC107 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB621E0873E4007CC107 /* CalculatorViewController.swift */; };
+		C438AB671E08A8F0007CC107 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB661E08A8F0007CC107 /* ItemCell.swift */; };
+		C438AB691E08AA4A007CC107 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB681E08AA4A007CC107 /* ItemTableViewController.swift */; };
+		C438AB6B1E08AB79007CC107 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB6A1E08AB79007CC107 /* Item.swift */; };
 		C4893EA31DF0BCDB004FB07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */; };
 		C4893EA51DF0BCDB004FB07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA41DF0BCDB004FB07F /* ViewController.swift */; };
 		C4893EA81DF0BCDB004FB07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4893EA61DF0BCDB004FB07F /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 		C41357CF1DF1026000D791DC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C438AB611E08700C007CC107 /* groceryBuddy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "groceryBuddy-Bridging-Header.h"; sourceTree = "<group>"; };
 		C438AB621E0873E4007CC107 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		C438AB661E08A8F0007CC107 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		C438AB681E08AA4A007CC107 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		C438AB6A1E08AB79007CC107 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C4893E9F1DF0BCDB004FB07F /* groceryBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groceryBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4893EA41DF0BCDB004FB07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				C40117D31DF88D3800A2BE99 /* User.swift */,
+				C438AB6A1E08AB79007CC107 /* Item.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -134,6 +141,8 @@
 				C4E324171DF214FA00E6FEC4 /* LoginViewController.swift */,
 				C40117CA1DF77E9D00A2BE99 /* SQLiteDataBase.swift */,
 				C438AB621E0873E4007CC107 /* CalculatorViewController.swift */,
+				C438AB661E08A8F0007CC107 /* ItemCell.swift */,
+				C438AB681E08AA4A007CC107 /* ItemTableViewController.swift */,
 			);
 			path = groceryBuddy;
 			sourceTree = "<group>";
@@ -261,6 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C438AB6B1E08AB79007CC107 /* Item.swift in Sources */,
+				C438AB671E08A8F0007CC107 /* ItemCell.swift in Sources */,
+				C438AB691E08AA4A007CC107 /* ItemTableViewController.swift in Sources */,
 				C4E324181DF214FA00E6FEC4 /* LoginViewController.swift in Sources */,
 				C41357D01DF1026000D791DC /* RegisterViewController.swift in Sources */,
 				C40117D41DF88D3800A2BE99 /* User.swift in Sources */,

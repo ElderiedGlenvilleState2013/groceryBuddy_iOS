@@ -25,7 +25,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Grocery Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-MN-Jai">
                                 <rect key="frame" x="20" y="224" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,7 +45,7 @@
                             <constraint firstItem="gHA-Vb-YvY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QXL-Lc-XgU"/>
                             <constraint firstItem="eBQ-MN-Jai" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="R3S-e7-N9L"/>
                             <constraint firstItem="eBQ-MN-Jai" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rzx-vP-dqU"/>
-                            <constraint firstItem="eBQ-MN-Jai" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="tcm-eB-to4"/>
+                            <constraint firstItem="eBQ-MN-Jai" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="tcm-eB-to4"/>
                             <constraint firstItem="gHA-Vb-YvY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="wzN-go-D4f"/>
                         </constraints>
                     </view>
@@ -426,7 +426,7 @@
                                                 </constraints>
                                                 <state key="normal" image="divide"/>
                                                 <connections>
-                                                    <action selector="divideBtnPressed:" destination="LCa-AN-hMP" eventType="touchUpInside" id="dkS-JY-ZxH"/>
+                                                    <action selector="divideBtnPressedWithSender:" destination="LCa-AN-hMP" eventType="touchUpInside" id="q7J-DO-OsG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -475,7 +475,7 @@
                                                 </constraints>
                                                 <state key="normal" image="multiply"/>
                                                 <connections>
-                                                    <action selector="multiplyBtnPressed:" destination="LCa-AN-hMP" eventType="touchUpInside" id="Bph-Wy-08m"/>
+                                                    <action selector="multiplyBtnPressedWithSender:" destination="LCa-AN-hMP" eventType="touchUpInside" id="z2c-PA-K4X"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -524,7 +524,7 @@
                                                 </constraints>
                                                 <state key="normal" image="add"/>
                                                 <connections>
-                                                    <action selector="addBtnPressed:" destination="LCa-AN-hMP" eventType="touchUpInside" id="nCk-PK-C4H"/>
+                                                    <action selector="addBtnPressedWithSender:" destination="LCa-AN-hMP" eventType="touchUpInside" id="XMJ-VF-auo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -551,7 +551,7 @@
                                                 </constraints>
                                                 <state key="normal" image="clear-icon-28"/>
                                                 <connections>
-                                                    <action selector="clearButtonPressed:" destination="LCa-AN-hMP" eventType="touchUpInside" id="M11-Rp-C1r"/>
+                                                    <action selector="clearButtonPressedWithSender:" destination="LCa-AN-hMP" eventType="touchUpInside" id="mQg-oK-0ue"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jz4-za-BEA">
@@ -562,7 +562,7 @@
                                                 </constraints>
                                                 <state key="normal" image="equal"/>
                                                 <connections>
-                                                    <action selector="equalBtnPressed:" destination="LCa-AN-hMP" eventType="touchUpInside" id="m11-5a-vaA"/>
+                                                    <action selector="equalBtnPressedWithSender:" destination="LCa-AN-hMP" eventType="touchUpInside" id="o3U-IC-3f4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw0-Hz-yZA">
@@ -573,7 +573,7 @@
                                                 </constraints>
                                                 <state key="normal" image="subtract"/>
                                                 <connections>
-                                                    <action selector="subtractBtnPressed:" destination="LCa-AN-hMP" eventType="touchUpInside" id="WMs-iq-Bgt"/>
+                                                    <action selector="subtractBtnPressedWithSender:" destination="LCa-AN-hMP" eventType="touchUpInside" id="wS5-Ta-esk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -598,6 +598,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf9-gs-c6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2252" y="1199.5502248875564"/>
+        </scene>
+        <!--Item Table View Controller-->
+        <scene sceneID="xBE-by-fVr">
+            <objects>
+                <viewController id="rZG-48-cd6" customClass="ItemTableViewController" customModule="groceryBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GIw-MA-81t"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vd0-tp-DJ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MpH-ME-nfL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w11-Xh-PAM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="619"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.61731069620000001" green="0.61919501290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" rowHeight="70" id="BpZ-EM-9yZ" customClass="ItemCell" customModule="groceryBuddy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BpZ-EM-9yZ" id="MRU-by-CCx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbw-eJ-sPI">
+                                                    <rect key="frame" x="27" y="16" width="69" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taT-rF-ocl">
+                                                    <rect key="frame" x="136" y="16" width="69" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemCategory" destination="taT-rF-ocl" id="9tM-5y-wwr"/>
+                                            <outlet property="itemName" destination="Xbw-eJ-sPI" id="Cdi-Fr-ukd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myTableView" destination="w11-Xh-PAM" id="iAw-9q-3Ob"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9P-NG-oFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3041" y="1200"/>
         </scene>
     </scenes>
     <resources>
