@@ -14,13 +14,14 @@
 		C41357D01DF1026000D791DC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41357CF1DF1026000D791DC /* RegisterViewController.swift */; };
 		C438AB631E0873E4007CC107 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB621E0873E4007CC107 /* CalculatorViewController.swift */; };
 		C438AB671E08A8F0007CC107 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB661E08A8F0007CC107 /* ItemCell.swift */; };
-		C438AB691E08AA4A007CC107 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB681E08AA4A007CC107 /* ItemTableViewController.swift */; };
 		C438AB6B1E08AB79007CC107 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB6A1E08AB79007CC107 /* Item.swift */; };
+		C438AB6D1E08B47A007CC107 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB6C1E08B47A007CC107 /* AddItemsViewController.swift */; };
+		C438AB731E0A0082007CC107 /* ItemsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB721E0A0082007CC107 /* ItemsTableVC.swift */; };
 		C4893EA31DF0BCDB004FB07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */; };
 		C4893EA51DF0BCDB004FB07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA41DF0BCDB004FB07F /* ViewController.swift */; };
-		C4893EA81DF0BCDB004FB07F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4893EA61DF0BCDB004FB07F /* Main.storyboard */; };
 		C4893EAA1DF0BCDB004FB07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4893EA91DF0BCDB004FB07F /* Assets.xcassets */; };
 		C4893EAD1DF0BCDB004FB07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4893EAB1DF0BCDB004FB07F /* LaunchScreen.storyboard */; };
+		C4D6ACDF1E0CB79700005BDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D6ACDE1E0CB79700005BDD /* Main.storyboard */; };
 		C4E324181DF214FA00E6FEC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E324171DF214FA00E6FEC4 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,15 +37,16 @@
 		C438AB611E08700C007CC107 /* groceryBuddy-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "groceryBuddy-Bridging-Header.h"; sourceTree = "<group>"; };
 		C438AB621E0873E4007CC107 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		C438AB661E08A8F0007CC107 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		C438AB681E08AA4A007CC107 /* ItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		C438AB6A1E08AB79007CC107 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C438AB6C1E08B47A007CC107 /* AddItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
+		C438AB721E0A0082007CC107 /* ItemsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableVC.swift; sourceTree = "<group>"; };
 		C4893E9F1DF0BCDB004FB07F /* groceryBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groceryBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4893EA41DF0BCDB004FB07F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C4893EA71DF0BCDB004FB07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4893EA91DF0BCDB004FB07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4893EAC1DF0BCDB004FB07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4893EAE1DF0BCDB004FB07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4D6ACDE1E0CB79700005BDD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C4E324171DF214FA00E6FEC4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C7CF6159400A6C65C6F0C773 /* Pods-groceryBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-groceryBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-groceryBuddy/Pods-groceryBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,17 +134,18 @@
 		C4893EA11DF0BCDB004FB07F /* groceryBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				C4D6ACDE1E0CB79700005BDD /* Main.storyboard */,
 				C438AB611E08700C007CC107 /* groceryBuddy-Bridging-Header.h */,
 				C40117D21DF88CE300A2BE99 /* Supporting Files */,
 				C40117D11DF88C9D00A2BE99 /* Model */,
 				C4893EA41DF0BCDB004FB07F /* ViewController.swift */,
-				C4893EA61DF0BCDB004FB07F /* Main.storyboard */,
 				C41357CF1DF1026000D791DC /* RegisterViewController.swift */,
 				C4E324171DF214FA00E6FEC4 /* LoginViewController.swift */,
 				C40117CA1DF77E9D00A2BE99 /* SQLiteDataBase.swift */,
 				C438AB621E0873E4007CC107 /* CalculatorViewController.swift */,
 				C438AB661E08A8F0007CC107 /* ItemCell.swift */,
-				C438AB681E08AA4A007CC107 /* ItemTableViewController.swift */,
+				C438AB721E0A0082007CC107 /* ItemsTableVC.swift */,
+				C438AB6C1E08B47A007CC107 /* AddItemsViewController.swift */,
 			);
 			path = groceryBuddy;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				TargetAttributes = {
 					C4893E9E1DF0BCDB004FB07F = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = VQ34Q93895;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -209,9 +213,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D6ACDF1E0CB79700005BDD /* Main.storyboard in Resources */,
 				C4893EAD1DF0BCDB004FB07F /* LaunchScreen.storyboard in Resources */,
 				C4893EAA1DF0BCDB004FB07F /* Assets.xcassets in Resources */,
-				C4893EA81DF0BCDB004FB07F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +276,6 @@
 			files = (
 				C438AB6B1E08AB79007CC107 /* Item.swift in Sources */,
 				C438AB671E08A8F0007CC107 /* ItemCell.swift in Sources */,
-				C438AB691E08AA4A007CC107 /* ItemTableViewController.swift in Sources */,
 				C4E324181DF214FA00E6FEC4 /* LoginViewController.swift in Sources */,
 				C41357D01DF1026000D791DC /* RegisterViewController.swift in Sources */,
 				C40117D41DF88D3800A2BE99 /* User.swift in Sources */,
@@ -280,20 +283,14 @@
 				C4893EA31DF0BCDB004FB07F /* AppDelegate.swift in Sources */,
 				C438AB631E0873E4007CC107 /* CalculatorViewController.swift in Sources */,
 				C40117CB1DF77E9D00A2BE99 /* SQLiteDataBase.swift in Sources */,
+				C438AB731E0A0082007CC107 /* ItemsTableVC.swift in Sources */,
+				C438AB6D1E08B47A007CC107 /* AddItemsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C4893EA61DF0BCDB004FB07F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4893EA71DF0BCDB004FB07F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C4893EAB1DF0BCDB004FB07F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -391,6 +388,7 @@
 			baseConfigurationReference = C7CF6159400A6C65C6F0C773 /* Pods-groceryBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VQ34Q93895;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,6 +410,7 @@
 			baseConfigurationReference = 4CAF196AA1504B39F48F414B /* Pods-groceryBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VQ34Q93895;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -27,6 +27,7 @@ class CalculatorViewController: UIViewController {
     var rightNum = ""
     var result = ""
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
