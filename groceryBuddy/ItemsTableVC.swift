@@ -69,7 +69,7 @@ class ItemsTableVC: UITableViewController {
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             items.remove(at: indexPath.row)
-            UserDefaults.standard.set(item_list, forKey: "list")
+//            UserDefaults.standard.set(item_list, forKey: "list")
             tableTasks.reloadData()
         }
     }

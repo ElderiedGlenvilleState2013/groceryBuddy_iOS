@@ -8,8 +8,6 @@
 
 import UIKit
 
-var item_list = [String]()
-
 class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
     
@@ -25,39 +23,69 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         self.addItem.delegate = self
 //        checkValidItemName()
 
-        // Do any additional setup after loading the view.
+    
     }
 
-    @IBAction func saveBtnPressed(_ sender: AnyObject){
+    @IBAction func addBtnPressed(_ sender: Any) {
+        addItems()
+    }
+
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        addItems()
+    }
+    
+    func addItems(){
         if addItem.text != "" && addCategory.text != "" {
             let newItem = Item(name: addItem.text!, category: addCategory.text!)
             items.append(newItem!)
-//            items.append(addItem.text!)
-            UserDefaults.standard.set(item_list, forKey: "list")
             print("Save Button pressed!\(addItem.text!)")
             addItem.text = ""
             addCategory.text = ""
+            navigationController?.popViewController(animated: true)
+            
+            let myAlert = UIAlertController(title: "Alert", message: "Item Added", preferredStyle: UIAlertControllerStyle.alert)
+            print("Item Added")
+            
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                action in self.dismiss(animated: true, completion: nil)
+            }
+            myAlert.addAction(okAction)
+            self.present(myAlert, animated: true, completion: nil)
+            
         } else {
+            displayAlertonItems("All fields are required.")
             print("Fields must be filled.")
+            
+            return
         }
         
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
 //        if saveBtn === sender || addBtn === sender {
 //            let name = addItem.text ?? ""
 //            let category = addCategory.text ?? ""
 //            
 //            item = Item(name: name, category: category)
 //            print(item)
-        var secondVC : ItemsTableVC = segue.destination as! ItemsTableVC
-        
+//        var secondVC : ItemsTableVC = segue.destination as! ItemsTableVC
+//        
 //        secondVC.items = addItem.text
+//    }
+//    
+    func displayAlertonItems(_ userMessage:String ){
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
     }
     
-     func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -68,12 +96,6 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     
 //    func textFieldDidBeginEditing(_ textField: UITextField) {
 //        saveBtn.isEnabled = false
-//    }
-//
-//    func checkValidItemName() {
-//        // Disable the Save button if the text field is empty.
-//        let text = addItem.text ?? ""
-//        saveBtn.isEnabled = !text.isEmpty
 //    }
 
 

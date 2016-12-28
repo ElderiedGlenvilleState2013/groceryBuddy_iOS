@@ -663,7 +663,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveBtnPressed:" destination="oxf-6v-QqU" eventType="touchUpInside" id="BSl-rZ-t0R"/>
+                                    <action selector="saveBtnPressed:" destination="oxf-6v-QqU" eventType="touchUpInside" id="xfm-gj-ycj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -671,6 +671,7 @@
                         <constraints>
                             <constraint firstItem="XNQ-gp-ZhL" firstAttribute="top" secondItem="Mrr-pb-Il0" secondAttribute="bottom" constant="29" id="6wf-Iz-vbV"/>
                             <constraint firstItem="9mk-hP-CsT" firstAttribute="top" secondItem="G0S-9L-PEI" secondAttribute="bottom" constant="34" id="8bV-LP-ozX"/>
+                            <constraint firstItem="XNQ-gp-ZhL" firstAttribute="top" secondItem="crl-zs-bA5" secondAttribute="bottom" constant="270" id="CMS-ed-SxD"/>
                             <constraint firstItem="G0S-9L-PEI" firstAttribute="top" secondItem="iJD-Wa-W0t" secondAttribute="bottom" constant="8" id="Ht6-p2-4os"/>
                             <constraint firstItem="Mrr-pb-Il0" firstAttribute="top" secondItem="9mk-hP-CsT" secondAttribute="bottom" constant="8" id="Lxn-l3-F9J"/>
                             <constraint firstItem="XNQ-gp-ZhL" firstAttribute="leading" secondItem="HoT-8f-upV" secondAttribute="leadingMargin" constant="170" id="TS6-kh-cTl"/>
@@ -682,7 +683,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="a2v-gl-8qH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W1V-S3-PSX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W1V-S3-PSX">
+                            <connections>
+                                <action selector="addBtnPressed:" destination="oxf-6v-QqU" id="0xf-i4-JV9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addBtn" destination="W1V-S3-PSX" id="Clb-Jt-Qzj"/>
@@ -723,10 +728,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sra-NX-uUn">
-                                            <rect key="frame" x="155" y="19" width="87" height="21"/>
+                                            <rect key="frame" x="155" y="19" width="123" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="Mev-Tn-PuT"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="hKq-2F-ddA"/>
+                                                <constraint firstAttribute="width" constant="123" id="FQQ-nT-ULV"/>
                                                 <constraint firstAttribute="height" constant="21" id="iab-st-B3y"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="tAC-U4-WtK"/>
                                             </constraints>
