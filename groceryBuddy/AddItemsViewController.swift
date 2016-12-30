@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite
 
 class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
@@ -91,6 +92,7 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addItem.resignFirstResponder()
+        addCategory.resignFirstResponder()
         return true
     }
     
@@ -100,3 +102,5 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
 
 }
+
+

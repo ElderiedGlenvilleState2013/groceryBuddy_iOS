@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import SQLite
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var helloUserLbl: UILabel!
+    
+    let path = NSSearchPathForDirectoriesInDomains(
+        .documentDirectory, .userDomainMask, true
+        ).first!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        helloUserLbl.text = ""
+        helloUserLbl.text = UserDefaults.standard.string(forKey: "userEmail")
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,6 +39,8 @@ class ViewController: UIViewController {
 
     @IBAction func userLogout(_ sender: AnyObject) {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.set("", forKey: "userEmail")
+        UserDefaults.standard.set("", forKey: "userPassword")
         UserDefaults.standard.synchronize()
         self.performSegue(withIdentifier: "loginView", sender: self)
 //        self.dismissViewControllerAnimated(true, completion: nil)

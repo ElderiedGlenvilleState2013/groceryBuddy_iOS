@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SQLite
 
 class RegisterViewController: UIViewController {
     
@@ -46,9 +46,12 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        UserDefaults.standard.set(userEmail, forKey: "userEmail")
-        UserDefaults.standard.set(userPassword, forKey: "userPassword")
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.set(userEmail, forKey: "userEmail")
+//        UserDefaults.standard.set(userPassword, forKey: "userPassword")
+//        UserDefaults.standard.synchronize()
+        let user = userDataBase()
+        user.addUsersTable(userEmail: userEmail!, userPassword: userPassword!)
+        
         
         let myAlert = UIAlertController(title: "Alert", message: "Registration is successful. Thank you!", preferredStyle: UIAlertControllerStyle.alert)
             print("this should display too...")
@@ -71,14 +74,5 @@ class RegisterViewController: UIViewController {
         self.present(myAlert, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

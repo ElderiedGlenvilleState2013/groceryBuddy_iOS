@@ -8,79 +8,89 @@
 
 import Foundation
 import UIKit
+import SQLite
 
 class SQLiteDataBase {
 
-//    enum DataAccessError: Error {
-//        case datastore_Connection_Error
-//        case insert_Error
-//        case delete_Error
-//        case search_Error
-//        case nil_In_Data
+    static let instance = SQLiteDataBase()
+    private let db: Connection?
+    
+    private init() {
+        
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        do {
+            db = try Connection("\(path)/GroceryBuddy.sqlite")
+        } catch {
+            db = nil
+            print("Cannot create DataBase!")
+        }
+    }
+
+    
+//    func databaseConnect() throws {
+//        
+//        do {
+//            let db = try Connection("\(path)/GroceryBuddy.sqlite")
+//            print(path)
+//            let users = Table("users")
+//            let id = Expression<Int64>("id")
+//            let email = Expression<String>("email")
+//            let password = Expression<String?>("password")
+////        try! db.run(users.delete())
+//            do {
+//                try db.run(users.create (ifNotExists: true) { t in
+//                    t.column(id, primaryKey: true)
+//                    t.column(email, unique: true, check: email.like("%@%"))
+//                    t.column(password)
+//                })
+//            } catch _ {
+//              print("cant create Table")
+//            }
+//        
+//            do {
+//                try db.run(users.insert(email <- userEmail, password <- userPassword))
+//                for user in try! db.prepare(users) {
+//                    print("id: \(user[id]), email: \(user[email])")
+//                    print(path)
+//                }
+//            } catch _ {
+//                print("Could not add user.")
+//            }
+//        } catch _ {
+//            print("cannot create DataBase!")
+//        }
 //    }
     
-   func openDatabase() -> OpaquePointer {
-        var db: OpaquePointer? = nil
-    
-        if sqlite3_open("/Users/rubythree/Documents/xcode_projs/groceryBuddy/grocerybuddy/grocery.db", &db) == SQLITE_OK {
-            
-                print("Successfully opened connection to database")
-                return db!
-            
-        } else {
-            print("Failed to open file")
-
-        }
-    return db!
+//    func addUsersTable(userEmail: String, userPassword: String) {
+//
+//        let db = try! Connection("\(path)/GroceryBuddy.sqlite")
+//            print(path)
+//        
+//        let users = Table("users")
+//        let id = Expression<Int64>("id")
+//        let email = Expression<String>("email")
+//        let password = Expression<String?>("password")
+//        do {
+//            try db.run(users.create (ifNotExists: true) { t in
+//                t.column(id, primaryKey: true)
+//                t.column(email, unique: true, check: email.like("%@%"))
+//                t.column(password)
+//            })
+//        } catch _ {
+//            print("cant create Table")
+//        }
+//        
+//        do {
+//            try db.run(users.insert(email <- userEmail, password <- userPassword))
+//            for user in try! db.prepare(users) {
+//                print("id: \(user[id]), email: \(user[email])")
+//                print(path)
+//            }
+//        } catch _ {
+//            print("Could not add user.")
+//        }
     }
-    
-    let createTableString = "CREATE TABLE Contact(" + "Id INT PRIMARY KEY NOT NULL," + "Name CHAR(255));"
-    
-    func createTable() {
-        
-        var createTableStatement: OpaquePointer? = nil
-        
-        let db: OpaquePointer = openDatabase()
-        
-        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
-            // 3
-            if sqlite3_step(createTableStatement) == SQLITE_DONE {
-                print("Contact table created.")
-            } else {
-                print("Contact table could not be created.")
-            }
-        } else {
-            print("CREATE TABLE statement could not be prepared.")
-        }
-        // 4
-        sqlite3_finalize(createTableStatement)
-        
-        sqlite3_close(db)
-    }
-    
-    let insertStatementString = "INSERT INTO Contact (Id, Name) VALUES (?, ?);"
-    
-    func updateDatabase(_ dbCommand: String)
-    {
-        var updateStatement: OpaquePointer? = nil
-        
-        let db: OpaquePointer = openDatabase()
-        
-        if sqlite3_prepare_v2(db, dbCommand, -1, &updateStatement, nil) == SQLITE_OK {
-            if sqlite3_step(updateStatement) == SQLITE_DONE {
-                //do nothing
-            } else {
-                print("Could not updateDatabase")
-            }
-        } else {
-            print("updateDatabase dbCommand could not be prepared")
-        }
-        
-        sqlite3_finalize(updateStatement)
-        
-        sqlite3_close(db)
-        
-    }
+   
 
 
-  }

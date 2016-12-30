@@ -7,9 +7,26 @@
 //
 
 import Foundation
+import SQLite
 
-enum UserInformation: String {
-    case Email = "Email"
-    case Password = "Password"
-    case RepeatPassword = "Repeat Password"
+class User {
+    let id: Int64?
+    var email: String
+    var password: String
+    
+    init(id: Int64) {
+        self.id = id
+        email = ""
+        password = ""
+    }
+    
+    init(id: Int64, email: String, password: String){
+        self.id = id
+        self.email = email
+        self.password = password
+    }
+
+
+    
+    
 }
