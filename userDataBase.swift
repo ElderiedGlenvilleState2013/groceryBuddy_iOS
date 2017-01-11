@@ -45,30 +45,6 @@ class userDataBase {
         }
     }
 
-//    func userFind(userEmail: String, userPassword: String) -> (String, String)  {
-//        
-//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-//        let db = try! Connection("\(path)/GroceryBuddy.sqlite")
-//        print(path)
-//    
-//        do {
-//        
-//            for user in try! db.prepare(users.select(id, email, password)) {
-////                print(" email: \(user[email]), password: \(user[password])")
-//
-//                if(user[email] == userEmail) && (user[password] == userPassword){
-//                    let theUser = user[email]
-//                    let thePassword = user[password]
-//                        return (theUser, thePassword!)
-//                }
-//            }
-//        }
-//        catch {
-//            print("Cannot print users.")
-//        }
-//    }
-    
-//
     func userFind() -> [User] {
         
         var selectedUser = [User]()

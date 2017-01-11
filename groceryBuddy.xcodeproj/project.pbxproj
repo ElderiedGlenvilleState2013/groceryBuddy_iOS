@@ -20,6 +20,7 @@
 		C438AB6D1E08B47A007CC107 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB6C1E08B47A007CC107 /* AddItemsViewController.swift */; };
 		C438AB731E0A0082007CC107 /* ItemsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438AB721E0A0082007CC107 /* ItemsTableVC.swift */; };
 		C45E1F191E15EDD2009A2A1D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E1F181E15EDD2009A2A1D /* Utility.swift */; };
+		C46291261E26EBCD0036E17A /* itemDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46291251E26EBCD0036E17A /* itemDataBase.swift */; };
 		C478D3601E25640E006CA8BE /* userDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478D35F1E25640E006CA8BE /* userDataBase.swift */; };
 		C4893EA31DF0BCDB004FB07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */; };
 		C4893EA51DF0BCDB004FB07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4893EA41DF0BCDB004FB07F /* ViewController.swift */; };
@@ -120,6 +121,7 @@
 		C438AB6C1E08B47A007CC107 /* AddItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
 		C438AB721E0A0082007CC107 /* ItemsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableVC.swift; sourceTree = "<group>"; };
 		C45E1F181E15EDD2009A2A1D /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C46291251E26EBCD0036E17A /* itemDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemDataBase.swift; sourceTree = "<group>"; };
 		C478D35F1E25640E006CA8BE /* userDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDataBase.swift; sourceTree = "<group>"; };
 		C4893E9F1DF0BCDB004FB07F /* groceryBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groceryBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4893EA21DF0BCDB004FB07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				C478D35F1E25640E006CA8BE /* userDataBase.swift */,
+				C46291251E26EBCD0036E17A /* itemDataBase.swift */,
 			);
 			name = SQLite;
 			path = ..;
@@ -456,6 +459,7 @@
 				C40117CB1DF77E9D00A2BE99 /* SQLiteDataBase.swift in Sources */,
 				C438AB731E0A0082007CC107 /* ItemsTableVC.swift in Sources */,
 				C438AB6D1E08B47A007CC107 /* AddItemsViewController.swift in Sources */,
+				C46291261E26EBCD0036E17A /* itemDataBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,20 +62,7 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-//    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        if saveBtn === sender || addBtn === sender {
-//            let name = addItem.text ?? ""
-//            let category = addCategory.text ?? ""
-//            
-//            item = Item(name: name, category: category)
-//            print(item)
-//        var secondVC : ItemsTableVC = segue.destination as! ItemsTableVC
-//        
-//        secondVC.items = addItem.text
-//    }
-//    
+
     func displayAlertonItems(_ userMessage:String ){
         let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
         
