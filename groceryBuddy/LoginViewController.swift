@@ -51,7 +51,8 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(userPassword, forKey: "userPassword")
                     let data1 = results[i].email
                     let data2 = results[i].id
-                    print("Here is the id No. of our signed in user : \(data1)")
+                    UserDefaults.standard.set(results[i].id, forKey: "userId")
+                    print("Here is the id No. of our signed in user : \(data2!)")
                     delegate1?.sendUserEmail(data: data1)
                     delegate2?.sendUserId(data: data2!)
                     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")

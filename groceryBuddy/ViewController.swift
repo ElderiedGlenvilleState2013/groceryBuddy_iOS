@@ -15,7 +15,7 @@ class ViewController: UIViewController, sendDataDelegate1 {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        helloUserLbl.text = ""
+        helloUserLbl.text = UserDefaults.standard.string(forKey: "userEmail")
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,9 @@ class ViewController: UIViewController, sendDataDelegate1 {
     
     func sendUserEmail(data: String){
         helloUserLbl.text = data
+        UserDefaults.standard.set(data, forKey: "userEmail")
     }
+    
 
     @IBAction func userLogout(_ sender: AnyObject) {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")

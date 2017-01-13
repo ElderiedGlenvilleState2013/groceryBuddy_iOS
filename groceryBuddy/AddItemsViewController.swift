@@ -9,7 +9,7 @@
 import UIKit
 import SQLite
 
-class AddItemsViewController: UIViewController, UITextFieldDelegate {
+class AddItemsViewController: UIViewController, UITextFieldDelegate, sendDataDelegate2 {
 
     
     @IBOutlet weak var addItem: UITextField!
@@ -19,51 +19,64 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     
     var item: Item?
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginView" {
+            let loginVC: LoginViewController = segue.destination as! LoginViewController
+            loginVC.delegate2 = self
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addItem.delegate = self
     
     }
+    
+    func sendUserId(data: Int64){
+        
+        print("id number of this fellow is \(data)")
+    }
 
     @IBAction func addBtnPressed(_ sender: Any) {
-//        addItems()
+        addItems()
     }
 
     @IBAction func saveBtnPressed(_ sender: Any) {
-//        addItems()
+        addItems()
     }
    
    
-//    func addItems(){
-//        if addItem.text != "" && addCategory.text != "" {
+    func addItems(){
+        if addItem.text != "" && addCategory.text != "" {
+            var userID = UserDefaults.standard.integer(forKey: "userId")
 //            let newItem = Item(name: addItem.text!, category: addCategory.text!)
-////            let newItem = Item(user_id: id, name: addItem.text!, category: addCategory.text!)
-//            items.append(newItem!)
-//            print("Save Button pressed!\(addItem.text!)")
-//            let item = itemDataBase()
-//            item.addItemsTable(name: addItem.text!, category: addCategory.text!)
-//            addItem.text = ""
-//            addCategory.text = ""
-//            navigationController?.popViewController(animated: true)
-//            
-//            let myAlert = UIAlertController(title: "Alert", message: "Item Added", preferredStyle: UIAlertControllerStyle.alert)
-//            print("Item Added")
-//            
-//            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
-//                action in self.dismiss(animated: true, completion: nil)
-//            }
-//            myAlert.addAction(okAction)
-//            self.present(myAlert, animated: true, completion: nil)
-//            
-//        } else {
-//            displayAlertonItems("All fields are required.")
-//            print("Fields must be filled.")
-//            
-//            return
-//        }
-//        
-//    }
+            let newItem = Item(user_id: userID, name: addItem.text!, category: addCategory.text!)
+            items.append(newItem!)
+            print("Save Button pressed!\(addItem.text!)")
+            let item = itemDataBase()
+            item.addItemsTable(uid: userID, name: addItem.text!, category: addCategory.text!)
+            addItem.text = ""
+            addCategory.text = ""
+            navigationController?.popViewController(animated: true)
+            
+            let myAlert = UIAlertController(title: "Alert", message: "Item Added", preferredStyle: UIAlertControllerStyle.alert)
+            print("Item Added")
+            
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+                action in self.dismiss(animated: true, completion: nil)
+            }
+            myAlert.addAction(okAction)
+            self.present(myAlert, animated: true, completion: nil)
+            
+        } else {
+            displayAlertonItems("All fields are required.")
+            print("Fields must be filled.")
+            
+            return
+        }
+        
+    }
 
 
     func displayAlertonItems(_ userMessage:String ){
