@@ -19,49 +19,52 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate {
     
     var item: Item?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addItem.delegate = self
-//        checkValidItemName()
-
     
     }
 
     @IBAction func addBtnPressed(_ sender: Any) {
-        addItems()
+//        addItems()
     }
 
     @IBAction func saveBtnPressed(_ sender: Any) {
-        addItems()
+//        addItems()
     }
-    
-    func addItems(){
-        if addItem.text != "" && addCategory.text != "" {
-            let newItem = Item(name: addItem.text!, category: addCategory.text!)
-            items.append(newItem!)
-            print("Save Button pressed!\(addItem.text!)")
-            addItem.text = ""
-            addCategory.text = ""
-            navigationController?.popViewController(animated: true)
-            
-            let myAlert = UIAlertController(title: "Alert", message: "Item Added", preferredStyle: UIAlertControllerStyle.alert)
-            print("Item Added")
-            
-            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
-                action in self.dismiss(animated: true, completion: nil)
-            }
-            myAlert.addAction(okAction)
-            self.present(myAlert, animated: true, completion: nil)
-            
-        } else {
-            displayAlertonItems("All fields are required.")
-            print("Fields must be filled.")
-            
-            return
-        }
-        
-    }
-    
+   
+   
+//    func addItems(){
+//        if addItem.text != "" && addCategory.text != "" {
+//            let newItem = Item(name: addItem.text!, category: addCategory.text!)
+////            let newItem = Item(user_id: id, name: addItem.text!, category: addCategory.text!)
+//            items.append(newItem!)
+//            print("Save Button pressed!\(addItem.text!)")
+//            let item = itemDataBase()
+//            item.addItemsTable(name: addItem.text!, category: addCategory.text!)
+//            addItem.text = ""
+//            addCategory.text = ""
+//            navigationController?.popViewController(animated: true)
+//            
+//            let myAlert = UIAlertController(title: "Alert", message: "Item Added", preferredStyle: UIAlertControllerStyle.alert)
+//            print("Item Added")
+//            
+//            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
+//                action in self.dismiss(animated: true, completion: nil)
+//            }
+//            myAlert.addAction(okAction)
+//            self.present(myAlert, animated: true, completion: nil)
+//            
+//        } else {
+//            displayAlertonItems("All fields are required.")
+//            print("Fields must be filled.")
+//            
+//            return
+//        }
+//        
+//    }
+
 
     func displayAlertonItems(_ userMessage:String ){
         let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)

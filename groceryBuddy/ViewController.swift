@@ -9,19 +9,13 @@
 import UIKit
 import SQLite
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, sendDataDelegate1 {
     
     @IBOutlet weak var helloUserLbl: UILabel!
     
-    let path = NSSearchPathForDirectoriesInDomains(
-        .documentDirectory, .userDomainMask, true
-        ).first!
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        helloUserLbl.text = ""
-        helloUserLbl.text = UserDefaults.standard.string(forKey: "userEmail")
+//        helloUserLbl.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +29,17 @@ class ViewController: UIViewController {
         if (!isUserLoggedIn){
             self.performSegue(withIdentifier: "loginView", sender: self)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginView" {
+            let loginVC: LoginViewController = segue.destination as! LoginViewController
+            loginVC.delegate1 = self
+        }
+    }
+    
+    func sendUserEmail(data: String){
+        helloUserLbl.text = data
     }
 
     @IBAction func userLogout(_ sender: AnyObject) {

@@ -20,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Grocery Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-MN-Jai">
@@ -145,7 +145,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="Hvg-YT-VMe" eventType="touchUpInside" id="SPb-MT-w3F"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="vvs-gm-yg9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GFa-b0-dP9">
@@ -273,9 +272,6 @@
                                 <state key="normal" title="I have an existing account already">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Hvg-YT-VMe" kind="show" identifier="loginView" id="AuW-1E-lMK"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="d2m-1b-AY8">
                                 <rect key="frame" x="20" y="337" width="335" height="30"/>
@@ -738,7 +734,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Hb-dE-Hcf" id="Mwb-Be-fLW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="itemName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-Oq-N8V">
@@ -785,7 +781,7 @@
                     <navigationItem key="navigationItem" title="Grocery List" id="iJk-KP-koc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d7U-Lh-GQK">
                             <connections>
-                                <segue destination="oxf-6v-QqU" kind="show" id="T56-iZ-1sG"/>
+                                <segue destination="oxf-6v-QqU" kind="show" identifier="addUserItems" id="T56-iZ-1sG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -837,8 +833,4 @@
         <image name="multiply" width="111" height="114"/>
         <image name="subtract" width="111" height="114"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vvs-gm-yg9"/>
-        <segue reference="MV9-Ii-gqV"/>
-    </inferredMetricsTieBreakers>
 </document>

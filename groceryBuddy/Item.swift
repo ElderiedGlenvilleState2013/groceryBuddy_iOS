@@ -10,10 +10,12 @@ import Foundation
 
 class Item {
     
+    var user_id: Int
     var name: String
     var category: String
     
-    init?(name: String, category: String) {
+    init?( user_id: Int, name: String, category: String) {
+        self.user_id = user_id
         self.name = name
         self.category = category
         

@@ -15,33 +15,33 @@ class itemDataBase {
     let id = Expression<Int64>("id")
     let user_id = Expression<Int64>("user_id")
     let itemName = Expression<String>("itemName")
-    let category = Expression<String?>("category")
+    let itemCategory = Expression<String>("category")
     
-//    func addItemsTable( ) {
-//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-//        let db = try! Connection("\(path)/GroceryBuddy.sqlite")
-//        print(path)
-//        
-//        do {
-//            try db.run(items.create (ifNotExists: true) { t in
-//                t.column(id, primaryKey: true)
-//                t.column(user_id)
-//                t.column(itemName, unique: true)
-//                t.column(category)
-//            })
-//        } catch _ {
-//            print("cant create Table")
-//        }
-//        
-//        do {
-//            try db.run(items.insert(itemName <- name, category <- category))
-//            for item in try! db.prepare(items) {
-//                print("id: \(item[id]), Item name: \(item[name])")
-//                print(path)
-//            }
-//        } catch _ {
-//            print("Could not add item.")
-//        }
-//    }
+    func addItemsTable(uid: Int, name: String, category: String) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let db = try! Connection("\(path)/GroceryBuddy.sqlite")
+        print(path)
+        
+        do {
+            try db.run(items.create (ifNotExists: true) { t in
+                t.column(id, primaryKey: true)
+                t.column(user_id)
+                t.column(itemName, unique: true)
+                t.column(itemCategory)
+            })
+        } catch _ {
+            print("cant create Table")
+        }
+        
+        do {
+            try db.run(items.insert(user_id <- Int64(uid), itemName <- name, itemCategory <- category))
+            for item in try! db.prepare(items) {
+                print("id: \(item[id]), Item name: \(item[itemName]), Item category: \(item[itemCategory])")
+                print(path)
+            }
+        } catch _ {
+            print("Could not add item.")
+        }
+    }
 
 }

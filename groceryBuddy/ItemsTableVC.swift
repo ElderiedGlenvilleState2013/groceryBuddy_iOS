@@ -30,10 +30,10 @@ class ItemsTableVC: UITableViewController {
     }
     
     func loadSampleItems(){
-        let item1 = Item(name: "eggs", category: "food")!
-        let item2 = Item(name: "ham", category: "food")!
-        let item3 = Item(name: "milk", category: "beverage")!
-        let item4 = Item(name: "salt", category: "condiment")!
+        let item1 = Item(user_id: 1, name: "eggs", category: "food")!
+        let item2 = Item(user_id: 1, name: "ham", category: "food")!
+        let item3 = Item(user_id: 1, name: "milk", category: "beverage")!
+        let item4 = Item(user_id: 1, name: "salt", category: "condiment")!
 
         
         items += [item1, item2, item3, item4]
