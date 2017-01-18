@@ -6,7 +6,7 @@ Swift ###
 ## Build generated
 build/
 DerivedData/
-
+groceryBuddy.xcworkspace/xcuserdata/rubythree.xcuserdatad/UserInterfaceState.xcuserstate
 ## Various settings
 *.pbxuser
 !default.pbxuser
