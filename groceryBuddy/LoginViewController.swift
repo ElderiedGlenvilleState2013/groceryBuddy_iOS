@@ -11,7 +11,6 @@ import SQLite
 class LoginViewController: UIViewController {
     
     var delegate1: sendDataDelegate1?
-    var delegate2: sendDataDelegate2?
 
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
@@ -46,15 +45,11 @@ class LoginViewController: UIViewController {
         
         for i in 0..<results.count {
             if (userEmail == results[i].email) && (userPassword == results[i].password){
-                    print("User: \(results[i].email) with id: \(results[i].id!) is logged in")
                     UserDefaults.standard.set(userEmail, forKey: "userEmail")
                     UserDefaults.standard.set(userPassword, forKey: "userPassword")
                     let data1 = results[i].email
-                    let data2 = results[i].id
                     UserDefaults.standard.set(results[i].id, forKey: "userId")
-                    print("Here is the id No. of our signed in user : \(data2!)")
                     delegate1?.sendUserEmail(data: data1)
-                    delegate2?.sendUserId(data: data2!)
                     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                     UserDefaults.standard.synchronize()
                     let myAlert = UIAlertController(title: "Alert", message: "You are now logged in \(userEmail)", preferredStyle: UIAlertControllerStyle.alert)
@@ -89,8 +84,4 @@ protocol sendDataDelegate1 {
     
 }
 
-protocol sendDataDelegate2 {
-    
-    func sendUserId(data: Int64)
-    
-}
+

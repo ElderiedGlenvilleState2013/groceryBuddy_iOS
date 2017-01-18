@@ -15,7 +15,7 @@ class itemDataBase {
     let id = Expression<Int64>("id")
     let user_id = Expression<Int64>("user_id")
     let itemName = Expression<String>("itemName")
-    let itemCategory = Expression<String>("category")
+    let itemCategory = Expression<String>("itemCategory")
     
     func addItemsTable(uid: Int, name: String, category: String) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -43,5 +43,23 @@ class itemDataBase {
             print("Could not add item.")
         }
     }
+    
+    func getItems() -> [Item]{
+        
+        var selectedItem = [Item]()
+
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let db = try! Connection("\(path)/GroceryBuddy.sqlite")
+        
+        do {
+            for item in try! db.prepare(items.select(id, user_id, itemName, itemCategory)) {
+                selectedItem.append(Item(user_id: Int(item[user_id]), itemName: item[itemName], itemCategory: item[itemCategory])!)
+            }
+        } catch _ {
+            print("Cannot print items!")
+        }
+        return selectedItem
+    }
 
 }
+

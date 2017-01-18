@@ -9,9 +9,9 @@
 import UIKit
 import SQLite
 
-class AddItemsViewController: UIViewController, UITextFieldDelegate, sendDataDelegate2 {
+class AddItemsViewController: UIViewController, UITextFieldDelegate {
 
-    
+
     @IBOutlet weak var addItem: UITextField!
     @IBOutlet weak var addCategory: UITextField!
     @IBOutlet weak var addBtn: UIBarButtonItem!
@@ -19,25 +19,12 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate, sendDataDel
     
     var item: Item?
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loginView" {
-            let loginVC: LoginViewController = segue.destination as! LoginViewController
-            loginVC.delegate2 = self
-        }
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addItem.delegate = self
     
     }
     
-    func sendUserId(data: Int64){
-        
-        print("id number of this fellow is \(data)")
-    }
-
     @IBAction func addBtnPressed(_ sender: Any) {
         addItems()
     }
@@ -49,11 +36,9 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate, sendDataDel
    
     func addItems(){
         if addItem.text != "" && addCategory.text != "" {
-            var userID = UserDefaults.standard.integer(forKey: "userId")
-//            let newItem = Item(name: addItem.text!, category: addCategory.text!)
-            let newItem = Item(user_id: userID, name: addItem.text!, category: addCategory.text!)
-            items.append(newItem!)
-            print("Save Button pressed!\(addItem.text!)")
+            let userID = UserDefaults.standard.integer(forKey: "userId")
+//            let newItem = Item(user_id: userID, itemName: addItem.text!, itemCategory: addCategory.text!)
+//            items.append(newItem!)
             let item = itemDataBase()
             item.addItemsTable(uid: userID, name: addItem.text!, category: addCategory.text!)
             addItem.text = ""
@@ -105,5 +90,6 @@ class AddItemsViewController: UIViewController, UITextFieldDelegate, sendDataDel
 
 
 }
+
 
 

@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import SQLite
+import UIKit
 
-class User {
+class User: NSObject {
     let id: Int64?
     var email: String
     var password: String
