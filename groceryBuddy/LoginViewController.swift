@@ -41,26 +41,25 @@ class LoginViewController: UIViewController {
         }
         
         let user = userDataBase()
-        let results = try! user.userFind()
-        
-        for i in 0..<results.count {
-            if (userEmail == results[i].email) && (userPassword == results[i].password){
-                    UserDefaults.standard.set(userEmail, forKey: "userEmail")
-                    UserDefaults.standard.set(userPassword, forKey: "userPassword")
-                    let data1 = results[i].email
-                    UserDefaults.standard.set(results[i].id, forKey: "userId")
-                    delegate1?.sendUserEmail(data: data1)
-                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                    UserDefaults.standard.synchronize()
-                    let myAlert = UIAlertController(title: "Alert", message: "You are now logged in \(userEmail)", preferredStyle: UIAlertControllerStyle.alert)
+        let results = try! user.userFind(userEmail: userEmail, userPassword: userPassword)
+   
+        if (userEmail == results[0].email) && (userPassword == results[0].password){
+                UserDefaults.standard.set(userEmail, forKey: "userEmail")
+                UserDefaults.standard.set(userPassword, forKey: "userPassword")
+                let data1 = results[0].email
+                UserDefaults.standard.set(results[0].id, forKey: "userId")
+                delegate1?.sendUserEmail(data: data1)
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+                let myAlert = UIAlertController(title: "Alert", message: "You are now logged in \(userEmail)", preferredStyle: UIAlertControllerStyle.alert)
                 
-                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { action in self.dismiss(animated: true, completion: nil)
-                    }
-                    myAlert.addAction(okAction)
-                    self.present(myAlert, animated: true, completion: nil)
-                    return
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { action in self.dismiss(animated: true, completion: nil)
                 }
+                myAlert.addAction(okAction)
+                self.present(myAlert, animated: true, completion: nil)
+                return
             }
+
             displayErrorMessage("Enter the correct Email or Password.")
     }
 

@@ -9,7 +9,6 @@
 import Foundation
 import SQLite
 
-var selectedUser = [User]()
 
 class userDataBase {
 
@@ -45,23 +44,45 @@ class userDataBase {
         }
     }
 
-    func userFind() -> [User] {
+    func userFind(userEmail: String, userPassword: String) -> [User]{
         
         var selectedUser = [User]()
-
+        
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let db = try! Connection("\(path)/GroceryBuddy.sqlite")
         print(path)
         
         do {
-            
-            for user in try! db.prepare(users.select(id, email, password)) {
+        
+            for user in try! db.prepare(users.select(id, email, password).filter(email == userEmail)) {
                 selectedUser.append(User(id: user[id], email: user[email], password: user[password]!))
-                    }
+                print("id: \(user[id]), email: \(user[email]) with password: \(user[password]!)")
+            }
         } catch _ {
             print("Cannot print users.")
         }
         return selectedUser
+        
     }
+
+
+//    func userFind() -> [User] {
+//    
+//        var selectedUser = [User]()
+//    
+//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+//        let db = try! Connection("\(path)/GroceryBuddy.sqlite")
+//        print(path)
+//    
+//        do {
+//        
+//                for user in try! db.prepare(users.select(id, email, password)) {
+//                    selectedUser.append(User(id: user[id], email: user[email], password: user[password]!))
+//            }
+//        } catch _ {
+//            print("Cannot print users.")
+//        }
+//        return selectedUser
+//    }
 
 }
