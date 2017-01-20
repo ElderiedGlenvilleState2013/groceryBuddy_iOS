@@ -54,9 +54,18 @@ class userDataBase {
         
         do {
         
-            for user in try! db.prepare(users.select(id, email, password).filter(email == userEmail)) {
-                selectedUser.append(User(id: user[id], email: user[email], password: user[password]!))
-                print("id: \(user[id]), email: \(user[email]) with password: \(user[password]!)")
+//            for user in try! db.prepare(users.filter(email == userEmail)) {
+//                selectedUser.append(User(id: user[id], email: user[email], password: user[password]!))
+//                print("id: \(user[id]), email: \(user[email]) with password: \(user[password]!)")
+            
+            if let theUser = try! db.pluck(users.filter(email == userEmail)) {
+                if (theUser[id] == 0){
+                    print("User doesnt not exist")
+                    selectedUser.append(User(id: 0))
+                } else {
+                selectedUser.append(User(id: theUser[id], email: theUser[email], password: theUser[password]!))
+                print("id: \(theUser[id]), email: \(theUser[email]) with password: \(theUser[password]!)")
+                }
             }
         } catch _ {
             print("Cannot print users.")
