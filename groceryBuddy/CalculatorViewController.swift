@@ -1,10 +1,7 @@
 //
 //  CalculatorViewController.swift
 //  groceryBuddy
-//
-//  Created by RubyThree on 12/19/16.
-//  Copyright © 2016 RubyThree. All rights reserved.
-//
+
 
 import UIKit
 import AVFoundation

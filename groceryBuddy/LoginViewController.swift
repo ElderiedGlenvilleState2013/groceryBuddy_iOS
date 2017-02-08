@@ -1,10 +1,7 @@
 //
 //  LoginViewController.swift
 //  groceryBuddy
-//
-//  Created by RubyThree on 12/2/16.
-//  Copyright © 2016 RubyThree. All rights reserved.
-//
+
 import UIKit
 import SQLite
 

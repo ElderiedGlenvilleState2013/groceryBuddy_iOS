@@ -1,10 +1,7 @@
 //
 //  itemDataBase.swift
 //  groceryBuddy
-//
-//  Created by RubyThree on 1/11/17.
-//  Copyright © 2017 RubyThree. All rights reserved.
-//
+
 
 import Foundation
 import SQLite
